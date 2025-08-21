@@ -9,6 +9,11 @@ pipeline {
         CI = 'true'
     }
 
+     triggers {
+        pollSCM('* * * * *')  // Fallback polling
+        // OR for GitHub webhooks:
+        githubPush()
+    }
     stages {
         stage('Checkout') {
             steps {
