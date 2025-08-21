@@ -19,7 +19,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    bat 'npm install'
+                    sh 'npm install'
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    bat 'npm test'
+                    sh 'npm test'
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    bat 'npm run build'
+                    sh 'npm run build'
                 }
             }
         }
@@ -44,7 +44,7 @@ pipeline {
             steps {
                 script {
                     // Deploy script or commands can be added here
-                    bat 'echo Deploying the application...'
+                    sh 'echo Deploying the application...'
                 }
             }
         }
